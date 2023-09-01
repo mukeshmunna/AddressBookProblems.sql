@@ -6,6 +6,17 @@ internal class Program
     {
         Console.WriteLine(" AddressBookSystem ");
         AddressBookOperation Operation = new AddressBookOperation();
-        Operation.CreateingTable();
+        AddressModel data = new AddressModel()
+        {
+            FirstName = "Mukesh",
+            LastName = "Mukkara",
+            Address = "Sullurpeta",
+            City = "thirupathi",
+            State = "Andhrapradhesh",
+            Zip = 524121,
+            PhoneNumber = "9876543210",
+            Email = "mukesh@gmail.com",
+
+        };
     }
 }

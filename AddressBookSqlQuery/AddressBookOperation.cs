@@ -59,5 +59,54 @@ namespace AddressBookSystem_ADO
                 con.Close();
             }
         }
+        public void exuctedorNot(bool data)
+        {
+            if (data)
+            {
+                Console.WriteLine("Code executed");
+                return;
+            }
+            Console.WriteLine("Something went wrong");
+        }
+
+        public bool AddEmployee(AddressModel obj)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("AddContactDetails", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@FirstName", obj.FirstName);
+                com.Parameters.AddWithValue("@LastName", obj.LastName);
+                com.Parameters.AddWithValue("@Address", obj.Address);
+                com.Parameters.AddWithValue("@City", obj.City);
+                com.Parameters.AddWithValue("@State", obj.State);
+                com.Parameters.AddWithValue("@Zip", obj.Zip);
+                com.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
+                com.Parameters.AddWithValue("@Email", obj.Email);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                con.Close();
+                if (i != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
     }
 }

@@ -136,6 +136,37 @@ namespace AddressBookSystem_ADO
             }
 
         }
+        public bool DeleteDatat(AddressModel obj)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("DeleteContactDetails", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@FirstName", obj.FirstName);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                con.Close();
+                if (i != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
 
     }
 }

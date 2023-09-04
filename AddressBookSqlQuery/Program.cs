@@ -35,11 +35,10 @@ internal class Program
         {
             FirstName = "hello",
         };
-
         string citysearch = "processor";
         string statesearch = "Hardware";
-        Operation.GetAllEmployeeDetailsByState(statesearch);
-        Operation.DisplayAllDataByState(statesearch);
+        Operation.GetPeopleInCitySortedByName("processor");
+
 
     }
 }

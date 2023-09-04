@@ -114,7 +114,7 @@ namespace AddressBookSystem_ADO
                 com.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
                 com.Parameters.AddWithValue("@Email", obj.Email);
                 con.Open();
-                int i = com.ExecuteNonQuery(); //Execute and return the num of records added
+                int i = com.ExecuteNonQuery();
                 con.Close();
                 if (i != 0)
                 {

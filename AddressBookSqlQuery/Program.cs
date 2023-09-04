@@ -30,15 +30,12 @@ internal class Program
             Email = "mukesh@gmail.com",
 
         };
-
         AddressModel delete = new AddressModel()
         {
             FirstName = "hello",
         };
         string citysearch = "processor";
         string statesearch = "Hardware";
-        Operation.GetPeopleInCitySortedByName("processor");
-
-
+        Operation.CountByType();
     }
 }

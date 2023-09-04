@@ -10,7 +10,7 @@ namespace AddressBookSystem_ADO
 {
     public class AddressBookOperation
     {
-        private SqlConnection con;    
+        private SqlConnection con;
         private void connection()
         {
             string connectionStr = "data source = (localdb)\\MSSQLLocalDB; initial catalog=AddressBookService;integrated security = true ";
@@ -305,7 +305,7 @@ namespace AddressBookSystem_ADO
                         new AddressModel
                         {
                             City = Convert.ToString(dr["city"]),
-                            ount = Convert.ToInt32(dr["count"])
+                            count = Convert.ToInt32(dr["count"])
                         });
                 }
                 Console.WriteLine("No.of persons in each city are ");
@@ -406,5 +406,45 @@ namespace AddressBookSystem_ADO
                 con.Close();
             }
         }
+        //UC9 work only in database
 
+        public void CountByType()
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("CountByType", con);
+                com.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                List<AddressModel> addressBook = new List<AddressModel>();
+                DataTable dt = new DataTable();
+                con.Open();
+                da.Fill(dt);
+                con.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    addressBook.Add(
+                        new AddressModel
+                        {
+                            Relation = Convert.ToString(dr["Relation"]),
+                            count = Convert.ToInt32(dr["count"])
+                        });
+                }
+                Console.WriteLine("Number of persons in each type are: ");
+                foreach (var data in addressBook)
+                {
+                    Console.WriteLine(data.Relation + "--" + data.count);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
 }
+

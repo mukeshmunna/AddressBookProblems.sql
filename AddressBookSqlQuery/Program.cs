@@ -36,6 +36,7 @@ internal class Program
         };
         string citysearch = "processor";
         string statesearch = "Hardware";
-        Operation.CountByType();
+        Operation.PersonAsTwoRelation("kanha", "Profession");
+
     }
 }

@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "b4227ad8-5cf9-4723-84e9-55c5836d7cc4",
+    "name": "AddressBook_JsonServer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "29501459"
+  },
+  "item": [
+    {
+      "name": "  http://localhost:3000/AddressBookJson",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3000/AddressBookJson"
+      },
+      "response": []
+    },
+    {
+      "name": "  http://localhost:3000/AddressBookJson",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n         \"Id\": 38,\r\n        \"FirstName\": \"ApiTestCreate\",\r\n        \"LastName\": \"api\",\r\n        \"Address\": \"Gpd\",\r\n        \"City\": \"Chennai\",\r\n        \"State\": \"TamilNadu\",\r\n        \"Zip\": 601201,\r\n        \"PhoneNumber\": \"1234567890\",\r\n        \"Email\": \"shrey@gmail.com\",\r\n        \"Count\": 0,\r\n        \"Relation\": \"Family\"\r\n    }\r\n   ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:3000/AddressBookJson"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/AddressBookJson/ElbASFv",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:3000/AddressBookJson/ElbASFv"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/AddressBookJson/GnQd76o",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"Id\": 38,\r\n        \"FirstName\": \"update\",\r\n        \"LastName\": \"updatedone\",\r\n        \"Address\": \"xx\",\r\n        \"City\": \"yy\",\r\n        \"State\": \"nn\",\r\n        \"Zip\": 601201,\r\n        \"PhoneNumber\": \"1234567890\",\r\n        \"Email\": \"shrey@gmail.com\",\r\n        \"Count\": 0,\r\n        \"Relation\": \"Family\",\r\n        \"id\": \"GnQd76o\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:3000/AddressBookJson/GnQd76o"
+      },
+      "response": []
+    }
+  ]
+}

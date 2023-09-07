@@ -1,4 +1,5 @@
 ﻿using AddressBookSystem_ADO;
+using System.Threading;
 
 internal class Program
 {
@@ -37,6 +38,68 @@ internal class Program
         string citysearch = "processor";
         string statesearch = "Hardware";
         Operation.PersonAsTwoRelation("kanha", "Profession");
+
+        //MultiThreading concept
+        List<AddressModel> list = new List<AddressModel>();
+        list.Add(new AddressModel()
+        {
+            FirstName = "hello",
+            LastName = "haiii",
+            Address = "abcdefghij",
+            City = "hellohii",
+            State = "Hiihello",
+            Zip = 567432,
+            PhoneNumber = "1234567890",
+            Email = "abcd@gmail.com",
+            Relation = "Others"
+        });
+        list.Add(new AddressModel()
+        {
+            FirstName = "hello",
+            LastName = "haiii",
+            Address = "abcdefghij",
+            City = "hellohii",
+            State = "Hiihello",
+            Zip = 567432,
+            PhoneNumber = "1234567890",
+            Email = "abcd@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "hello",
+            LastName = "haiii",
+            Address = "abcdefghij",
+            City = "hellohii",
+            State = "Hiihello",
+            Zip = 567432,
+            PhoneNumber = "1234567890",
+            Email = "abcd@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "hello",
+            LastName = "haiii",
+            Address = "abcdefghij",
+            City = "hellohii",
+            State = "Hiihello",
+            Zip = 567432,
+            PhoneNumber = "1234567890",
+            Email = "abcd@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "hello",
+            LastName = "haiii",
+            Address = "abcdefghij",
+            City = "hellohii",
+            State = "Hiihello",
+            Zip = 567432,
+            PhoneNumber = "1234567890",
+            Email = "abcd@gmail.com",
+            Relation = "Others"
+        });
+        WithAndWithOutThread thread = new WithAndWithOutThread();
+
 
     }
 }
